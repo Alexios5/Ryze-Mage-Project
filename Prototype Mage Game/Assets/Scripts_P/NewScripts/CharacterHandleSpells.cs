@@ -13,17 +13,39 @@ namespace MoreMountains.CorgiEngine
 
         [SerializeField] private float ComboTimeMax = 1.0f;
         [SerializeField] private List<string> InputComboSequence;
-        public SpellSOScript CurrentSpell;
+        public List<SpellSOScript> CurrentSpells;
+        private SpellSOScript SpellToCast;
         private float Timer;
         private bool InitiateSequence = false;
-        private int CounterCombo = 0;
+        private List<CombosBasicInfo> CombosCounter;
 
+
+        private class CombosBasicInfo
+        {
+            public SpellSOScript SpellToCast;
+            public int Value;
+
+            public CombosBasicInfo(SpellSOScript spellToCast, int value)
+            {
+                SpellToCast = spellToCast;
+                Value = value;
+            }
+        }
 
         protected override void Initialization()
         {
             base.Initialization();
             InputComboSequence = new List<string>();
+            CombosCounter = new List<CombosBasicInfo>();
+            for (int i=0;i< CurrentSpells.Count;i++)
+            {
+                CombosBasicInfo currentComboInfo = new CombosBasicInfo(CurrentSpells[i],0);
+                
+                CombosCounter.Add(currentComboInfo);
+            }
+            
 
+           
         }
 
         public override void ProcessAbility()
@@ -104,28 +126,44 @@ namespace MoreMountains.CorgiEngine
         public void CheckComboMatch()
         {
 
-            CounterCombo = 0;
+
+
             for(int i=0;i<InputComboSequence.Count;i++)
             {
-                if (i< CurrentSpell.ComboSpell.Count)
+                for (int j = 0; j < CurrentSpells.Count; j++)
                 {
-                    if (CurrentSpell.ComboSpell[i].currentActionReference.action.name == InputComboSequence[i])
+                    if (i < CurrentSpells[j].ComboSpell.Count)
                     {
-                        CounterCombo++;
+                        if (CurrentSpells[j].ComboSpell[i].currentActionReference.action.name == InputComboSequence[i])
+                        {
+
+                            //Debug.Log(currentIndividualSpell.NameId);
+                            CombosCounter[j].Value++;
+                            
+
+                        }
                     }
                 }
                 
-            }
+               
 
 
-            if (CounterCombo >= InputComboSequence.Count)
-            {
-                Debug.Log("It is a match!!!!!!!!!!!");
+
             }
-            else
+
+            for(int i=0;i< CombosCounter.Count;i++)
             {
-                Debug.Log("No Combo");
+                
+                if (CombosCounter[i].Value == CombosCounter[i].SpellToCast.ComboSpell.Count && InputComboSequence.Count == CombosCounter[i].SpellToCast.ComboSpell.Count)
+                {
+                    Debug.Log("It is a match!!!!!!!!!!!");
+                    Debug.Log("The spell is : " + CombosCounter[i].SpellToCast.NameId);
+                    
+                }
+                CombosCounter[i].Value = 0;
             }
+            
+            
             
             InputComboSequence.Clear();
 

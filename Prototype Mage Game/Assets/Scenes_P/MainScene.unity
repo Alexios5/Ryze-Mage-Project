@@ -1502,6 +1502,29 @@ PrefabInstance:
       propertyPath: InputManagerExt
       value: 
       objectReference: {fileID: 1944163263}
+    - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: CurrentSpells.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: CurrentSpells.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c59df06910e528842858b76c25edc23f,
+        type: 2}
+    - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: CurrentSpells.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dcd9e765b75058c40879195afe8a1a00,
+        type: 2}
+    - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: CurrentSpells.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: bc9b310a6e544fa4ea6d7dcb6acdb45c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 673e60934a00cbc499cd1f265b614cdc, type: 3}
 --- !u!114 &2259581265221004433 stripped
