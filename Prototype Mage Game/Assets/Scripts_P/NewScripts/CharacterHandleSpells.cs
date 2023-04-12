@@ -13,6 +13,7 @@ namespace MoreMountains.CorgiEngine
 
         [SerializeField] private float ComboTimeMax = 1.0f;
         [SerializeField] private List<string> InputComboSequence;
+        [SerializeField] private int SpellLevelIndicator = 0;
         public List<SpellSOScript> CurrentSpells;
         private SpellSOScript SpellToCast;
         private float Timer;
@@ -158,7 +159,10 @@ namespace MoreMountains.CorgiEngine
                 {
                     Debug.Log("It is a match!!!!!!!!!!!");
                     Debug.Log("The spell is : " + CombosCounter[i].SpellToCast.NameId);
-                    this.gameObject.MMFGetComponentNoAlloc<CharacterHandleWeapon>().ShootStart();
+                    MMMultipleObjectPoolerObject ObjToPool = new MMMultipleObjectPoolerObject();
+
+                    this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().CurrentWeapon.GetComponent<SpellCasterWeapon>().SpellToCast = CombosCounter[i].SpellToCast.SpellsPrefabsLevels[SpellLevelIndicator];
+                    this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().ShootStart();
                 }
                 CombosCounter[i].Value = 0;
             }

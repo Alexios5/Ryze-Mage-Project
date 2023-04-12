@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca4de3698bf3b3b488148e36a1d61396, type: 3}
-  m_Name: FireTornado
+  m_Name: FireShield
   m_EditorClassIdentifier: 
   CurrentType: {fileID: 11400000, guid: b86482aea08142d4eb7ab0d42e9cf203, type: 2}
-  NameId: Fire Tornado
+  NameId: Fire Shield
+  SpellsPrefabsLevels:
+  - {fileID: 3139446120588693195, guid: 2c57f312bcd58684096423f74ff337fc, type: 3}
   ComboSpell:
   - NameInput: SouthB
     currentActionReference: {fileID: 7158604748176094991, guid: aa802c09074ad4d48a141c577831e52d,

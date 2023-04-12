@@ -15,6 +15,7 @@ public class SpellSOScript : ScriptableObject
     [Tooltip("Spell Type")]
     public string NameId;
 
+    public List<GameObject> SpellsPrefabsLevels;
 
     public List<InputsCombo> ComboSpell;
 
@@ -29,6 +30,8 @@ public class SpellSOScript : ScriptableObject
         
         public Animation ComboAnimation;
     }
+
+   
 
 
 
