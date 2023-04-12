@@ -158,7 +158,7 @@ namespace MoreMountains.CorgiEngine
                 {
                     Debug.Log("It is a match!!!!!!!!!!!");
                     Debug.Log("The spell is : " + CombosCounter[i].SpellToCast.NameId);
-                    
+                    this.gameObject.MMFGetComponentNoAlloc<CharacterHandleWeapon>().ShootStart();
                 }
                 CombosCounter[i].Value = 0;
             }

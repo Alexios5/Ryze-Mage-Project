@@ -135,6 +135,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 581707340}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &185072236 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8171571646737111527, guid: 673e60934a00cbc499cd1f265b614cdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1293049244236565790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &197701176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,6 +1496,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098722420859473193, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: InitialWeapon
+      value: 
+      objectReference: {fileID: 4076594308715754854, guid: 9b2267065f012b24494ca2e14e6474ca,
+        type: 3}
+    - target: {fileID: 1098722420859473193, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: WeaponAttachment
+      value: 
+      objectReference: {fileID: 185072236}
+    - target: {fileID: 1098722420859473193, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: ForceWeaponScaleResetOnEquip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098722420859473193, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: ForceWeaponRotationResetOnEquip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
+        type: 3}
+      propertyPath: ComboTimeMax
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1206527765806516379, guid: 673e60934a00cbc499cd1f265b614cdc,
         type: 3}
