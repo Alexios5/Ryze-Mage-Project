@@ -15,21 +15,18 @@ public class SpellSOScript : ScriptableObject
     [Tooltip("Spell Type")]
     public string NameId;
 
+
+    [Tooltip("Pool Amount")]
+    public int PoolAmount;
+
     public List<GameObject> SpellsPrefabsLevels;
 
-    public List<InputsCombo> ComboSpell;
+    public List<InputSOScript> ComboSpell;
 
 
 
 
-    [System.Serializable]
-    public struct InputsCombo
-    {
-        public string NameInput;
-        public InputActionReference currentActionReference;
-        
-        public Animation ComboAnimation;
-    }
+    
 
    
 

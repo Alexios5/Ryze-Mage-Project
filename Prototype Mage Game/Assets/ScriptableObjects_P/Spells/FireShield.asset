@@ -14,22 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentType: {fileID: 11400000, guid: b86482aea08142d4eb7ab0d42e9cf203, type: 2}
   NameId: Fire Shield
+  PoolAmount: 1
   SpellsPrefabsLevels:
   - {fileID: 3139446120588693195, guid: 2c57f312bcd58684096423f74ff337fc, type: 3}
   ComboSpell:
-  - NameInput: SouthB
-    currentActionReference: {fileID: 7158604748176094991, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
-  - NameInput: RightB
-    currentActionReference: {fileID: -470011481044944757, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
-  - NameInput: NorthB
-    currentActionReference: {fileID: 8118438182538349453, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
-  - NameInput: SouthB
-    currentActionReference: {fileID: 7158604748176094991, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
+  - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}
+  - {fileID: 11400000, guid: f457878ebc1114948be25feaa5825975, type: 2}
+  - {fileID: 11400000, guid: ffc6edba9ff74c245ade34e34fef6924, type: 2}
+  - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}

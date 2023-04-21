@@ -206,11 +206,33 @@
                 },
                 {
                     "name": "",
+                    "id": "3c445426-aa1e-4bca-af06-f49ca34dc294",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8511e145-ec7d-4441-867f-fbc65332c67c",
                     "path": "<Keyboard>/u",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "NorthB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca4a70f5-7a7d-4fdb-9416-2a2dd5e65d2a",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "NorthB",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -228,6 +250,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4919f327-1030-4e9f-aeca-4792cd84a4d9",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LeftB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b4a8146e-d7c1-486c-83cb-bc93cb4f7564",
                     "path": "<Keyboard>/k",
                     "interactions": "Press",
@@ -239,11 +272,33 @@
                 },
                 {
                     "name": "",
+                    "id": "44fc1db7-a530-4f78-816b-c919db9a1b48",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RightB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0ad3eda8-efc2-490b-a41b-d7cedefe8223",
                     "path": "<Keyboard>/j",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "SouthB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac80548d-7997-470c-a67e-09842a3e56ae",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "SouthB",
                     "isComposite": false,
                     "isPartOfComposite": false

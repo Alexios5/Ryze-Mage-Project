@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3139446120588858091}
   - component: {fileID: 3139446120593644619}
   - component: {fileID: 3139446120592638763}
-  - component: {fileID: 3027703129053429847}
   - component: {fileID: 3027703130027962371}
   - component: {fileID: 3027703158543383985}
+  - component: {fileID: 7489477979004591106}
+  - component: {fileID: 4587693146976478934}
   m_Layer: 12
   m_Name: FireShield_Level_1
   m_TagString: Untagged
@@ -84,39 +85,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3027703129053429847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3139446120588693195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1a732e2aa364c569bbb79498af8c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoundsBasedOn: 1
-  ExecuteOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-  ExecuteOnDisable:
-    m_PersistentCalls:
-      m_Calls: []
-  LifeTime: 5
-  FaceDirection: 1
-  Speed: 0
-  Acceleration: 0
-  Direction: {x: -1, y: 0, z: 0}
-  DirectionCanBeChangedBySpawner: 1
-  FlipValue: {x: -1, y: 1, z: 1}
-  ProjectileIsFacingRight: 1
-  InitialInvulnerabilityDuration: 0
-  DamageOwner: 0
-  SpawnSecurityCheck: 0
-  SpawnSecurityCheckLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &3027703130027962371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +149,7 @@ MonoBehaviour:
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 0}
-  DestroyOnDeath: 1
+  DestroyOnDeath: 0
   DelayBeforeDestruction: 0
   CollisionsOffOnDeath: 1
   GravityOffOnDeath: 0
@@ -197,6 +165,31 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
+--- !u!114 &7489477979004591106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3139446120588693195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa9fe13271b3a247b3a83acd6ef468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4587693146976478934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3139446120588693195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287f09958530a304684cfe674f89f09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentParticleSystem: {fileID: 8804340527588877102}
 --- !u!1 &8712495418860297332
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,18 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentType: {fileID: 11400000, guid: b86482aea08142d4eb7ab0d42e9cf203, type: 2}
   NameId: Area Of Fire
+  PoolAmount: 5
   SpellsPrefabsLevels:
   - {fileID: 3139446120588693195, guid: 0ca4adf06862560489942f95f50b96d0, type: 3}
   ComboSpell:
-  - NameInput: NorthB
-    currentActionReference: {fileID: 8118438182538349453, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
-  - NameInput: RightB
-    currentActionReference: {fileID: -470011481044944757, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
-  - NameInput: LeftB
-    currentActionReference: {fileID: -3027191465843792001, guid: aa802c09074ad4d48a141c577831e52d,
-      type: 3}
-    ComboAnimation: {fileID: 0}
+  - {fileID: 11400000, guid: ffc6edba9ff74c245ade34e34fef6924, type: 2}
+  - {fileID: 11400000, guid: f457878ebc1114948be25feaa5825975, type: 2}
+  - {fileID: 11400000, guid: fcf8cdcf960d3a54d88f5d5c3c837d54, type: 2}

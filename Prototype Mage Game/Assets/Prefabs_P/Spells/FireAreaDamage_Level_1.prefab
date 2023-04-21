@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 8448
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 0}
-  DestroyOnDeath: 1
+  DestroyOnDeath: 0
   DelayBeforeDestruction: 0
   CollisionsOffOnDeath: 1
   GravityOffOnDeath: 0
@@ -9791,9 +9791,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5726393295785906076}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
+  OnlyDeactivate: 1

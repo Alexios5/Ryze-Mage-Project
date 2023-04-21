@@ -13,7 +13,11 @@ namespace MoreMountains.CorgiEngine
 		public override GameObject SpawnProjectile(Vector3 spawnPosition, int projectileIndex, int totalProjectiles, bool triggerObjectActivation = true)
 		{
 			/// we get the next object in the pool and make sure it's not null
-			GameObject nextGameObject = Instantiate(SpellToCast);
+			GameObject nextGameObject = SpellToCast;
+
+
+
+
 			/*
 			// mandatory checks
 			if (nextGameObject == null) { return null; }

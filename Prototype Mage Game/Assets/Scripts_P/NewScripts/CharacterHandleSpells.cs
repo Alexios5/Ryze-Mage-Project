@@ -14,12 +14,16 @@ namespace MoreMountains.CorgiEngine
         [SerializeField] private float ComboTimeMax = 1.0f;
         [SerializeField] private List<string> InputComboSequence;
         [SerializeField] private int SpellLevelIndicator = 0;
+
+
         public List<SpellSOScript> CurrentSpells;
+
+
         private SpellSOScript SpellToCast;
         private float Timer;
         private bool InitiateSequence = false;
         private List<CombosBasicInfo> CombosCounter;
-
+        private List<SpellPool> AllPools;
 
         private class CombosBasicInfo
         {
@@ -33,6 +37,15 @@ namespace MoreMountains.CorgiEngine
             }
         }
 
+
+        private struct SpellPool
+        {
+            public string PoolSpellNameId;
+            public List<GameObject> SpellPooledObjects;
+
+        }
+
+
         protected override void Initialization()
         {
             base.Initialization();
@@ -44,9 +57,31 @@ namespace MoreMountains.CorgiEngine
                 
                 CombosCounter.Add(currentComboInfo);
             }
+
+            //Setup Pools
+
+            AllPools = new List<SpellPool>();
+            for (int j=0;j<CurrentSpells.Count;j++)
+            {
+                SpellPool newPool = new SpellPool();
+                newPool.PoolSpellNameId = CurrentSpells[j].NameId;
+                newPool.SpellPooledObjects = new List<GameObject>();
+                GameObject tmp;
+                for (int i=0;i< CurrentSpells[j].PoolAmount;i++)
+                {
+                    
+                    tmp = Instantiate(CurrentSpells[j].SpellsPrefabsLevels[SpellLevelIndicator]);
+                    tmp.SetActive(false);
+                    newPool.SpellPooledObjects.Add(tmp);
+
+
+                }
+                AllPools.Add(newPool);
+            }
+
             
 
-           
+
         }
 
         public override void ProcessAbility()
@@ -159,10 +194,15 @@ namespace MoreMountains.CorgiEngine
                 {
                     Debug.Log("It is a match!!!!!!!!!!!");
                     Debug.Log("The spell is : " + CombosCounter[i].SpellToCast.NameId);
-                    MMMultipleObjectPoolerObject ObjToPool = new MMMultipleObjectPoolerObject();
 
-                    this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().CurrentWeapon.GetComponent<SpellCasterWeapon>().SpellToCast = CombosCounter[i].SpellToCast.SpellsPrefabsLevels[SpellLevelIndicator];
-                    this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().ShootStart();
+
+                    this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().CurrentWeapon.GetComponent<SpellCasterWeapon>().SpellToCast = GetPooledObject(CombosCounter[i].SpellToCast);//CombosCounter[i].SpellToCast.SpellsPrefabsLevels[SpellLevelIndicator];
+                    if (this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().CurrentWeapon.GetComponent<SpellCasterWeapon>().SpellToCast != null)
+                    {
+                        this.gameObject.MMGetComponentNoAlloc<CharacterHandleWeapon>().ShootStart();
+                    }
+                    
+                    
                 }
                 CombosCounter[i].Value = 0;
             }
@@ -173,5 +213,25 @@ namespace MoreMountains.CorgiEngine
 
 
         }
-	}
+        public GameObject GetPooledObject(SpellSOScript currentSpellToPool)
+        {
+
+            for (int i=0; i<AllPools.Count;i++)
+            {
+                if (AllPools[i].PoolSpellNameId == currentSpellToPool.NameId)
+                {
+                    for (int j = 0; j < currentSpellToPool.PoolAmount; j++)
+                    {
+                        if (!AllPools[i].SpellPooledObjects[j].activeInHierarchy)
+                        {
+                            return AllPools[i].SpellPooledObjects[j];
+                        }
+                    }
+                }
+            }
+            return null;
+
+            
+        }
+    }
 }
