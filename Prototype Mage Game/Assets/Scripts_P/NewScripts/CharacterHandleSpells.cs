@@ -14,11 +14,12 @@ namespace MoreMountains.CorgiEngine
         [SerializeField] private float ComboTimeMax = 1.0f;
         [SerializeField] private List<string> InputComboSequence;
         [SerializeField] private int SpellLevelIndicator = 0;
+        [SerializeField] private List<SpellSOScript> CurrentSpells;
 
+        public List<SpellContainerSOScript> ContainerSpells;
 
-        public List<SpellSOScript> CurrentSpells;
-
-
+        [SerializeField] private SpellContainerSOScript currentContainerSpells;
+        private int IndexOfContainerSpells = 0;
         private SpellSOScript SpellToCast;
         private float Timer;
         private bool InitiateSequence = false;
@@ -49,37 +50,66 @@ namespace MoreMountains.CorgiEngine
         protected override void Initialization()
         {
             base.Initialization();
+            currentContainerSpells = ContainerSpells[IndexOfContainerSpells];
+            AllPools = new List<SpellPool>();
+            SetupCombosAndPools();
+
+           
+
+        }
+
+
+        public void SetupCombosAndPools()
+        {
+
+
+            CurrentSpells = new List<SpellSOScript>();
+
+            for (int i = 0; i < ContainerSpells[IndexOfContainerSpells].Spells.Count; i++)
+            {
+                CurrentSpells.Add(ContainerSpells[IndexOfContainerSpells].Spells[i]);
+            }
+
+
             InputComboSequence = new List<string>();
             CombosCounter = new List<CombosBasicInfo>();
-            for (int i=0;i< CurrentSpells.Count;i++)
+            for (int i = 0; i < CurrentSpells.Count; i++)
             {
-                CombosBasicInfo currentComboInfo = new CombosBasicInfo(CurrentSpells[i],0);
-                
+                CombosBasicInfo currentComboInfo = new CombosBasicInfo(CurrentSpells[i], 0);
+
                 CombosCounter.Add(currentComboInfo);
             }
 
             //Setup Pools
 
-            AllPools = new List<SpellPool>();
-            for (int j=0;j<CurrentSpells.Count;j++)
-            {
-                SpellPool newPool = new SpellPool();
-                newPool.PoolSpellNameId = CurrentSpells[j].NameId;
-                newPool.SpellPooledObjects = new List<GameObject>();
-                GameObject tmp;
-                for (int i=0;i< CurrentSpells[j].PoolAmount;i++)
-                {
-                    
-                    tmp = Instantiate(CurrentSpells[j].SpellsPrefabsLevels[SpellLevelIndicator]);
-                    tmp.SetActive(false);
-                    newPool.SpellPooledObjects.Add(tmp);
-
-
-                }
-                AllPools.Add(newPool);
-            }
-
             
+            for (int j = 0; j < CurrentSpells.Count; j++)
+            {
+
+
+
+                if (GameObject.Find(CurrentSpells[j].NameId) == null)
+                {
+                    GameObject GOparentOfPool = new GameObject();
+                    GOparentOfPool.name = CurrentSpells[j].NameId;
+                    SpellPool newPool = new SpellPool();
+                    newPool.PoolSpellNameId = CurrentSpells[j].NameId;
+                    newPool.SpellPooledObjects = new List<GameObject>();
+                    GameObject tmp;
+                    for (int i = 0; i < CurrentSpells[j].PoolAmount; i++)
+                    {
+
+                        tmp = Instantiate(CurrentSpells[j].SpellsPrefabsLevels[SpellLevelIndicator]);
+                        tmp.transform.parent = GOparentOfPool.transform;
+                        tmp.SetActive(false);
+                        newPool.SpellPooledObjects.Add(tmp);
+
+
+                    }
+                    AllPools.Add(newPool);
+                }
+               
+            }
 
 
         }
@@ -115,11 +145,30 @@ namespace MoreMountains.CorgiEngine
 
             }
 
+            if (InputManagerExt.Instance.ChangeSpellTypeButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+            {
+               ChangeSpellTypeFunc();
+            }
+
 
 
 
 
         }
+
+        public void ChangeSpellTypeFunc()
+        {
+            IndexOfContainerSpells++;
+            if (IndexOfContainerSpells >= ContainerSpells.Count)
+            {
+                IndexOfContainerSpells = 0;
+            }
+
+            currentContainerSpells = ContainerSpells[IndexOfContainerSpells];
+            SetupCombosAndPools();
+        }
+
+
         public bool CheckComboButtonsPressed()
         {
 

@@ -10,5 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 378ba24e0027ce440b46111f6182a182, type: 3}
-  m_Name: Earth
+  m_Name: Light
   m_EditorClassIdentifier: 
+  nameId: Wind

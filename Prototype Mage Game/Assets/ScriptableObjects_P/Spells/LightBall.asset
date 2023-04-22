@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca4de3698bf3b3b488148e36a1d61396, type: 3}
-  m_Name: FireWall
+  m_Name: LightBall
   m_EditorClassIdentifier: 
-  CurrentType: {fileID: 11400000, guid: b86482aea08142d4eb7ab0d42e9cf203, type: 2}
-  NameId: Fire Wall
+  CurrentType: {fileID: 11400000, guid: 8e9c526e9a1e19f40ad66b3fff02cff9, type: 2}
+  NameId: LightBall
   PoolAmount: 4
   SpellsPrefabsLevels:
-  - {fileID: 3139446120588693195, guid: a9b77ba5f04d5554e9d3ef191c6bacab, type: 3}
+  - {fileID: 3139446120588693195, guid: 568e5f553e9031c45becbf6aa793358e, type: 3}
   ComboSpell:
   - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}
   - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}
   - {fileID: 11400000, guid: fcf8cdcf960d3a54d88f5d5c3c837d54, type: 2}
+  - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}

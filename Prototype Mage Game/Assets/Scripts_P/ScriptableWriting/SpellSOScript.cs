@@ -16,6 +16,7 @@ public class SpellSOScript : ScriptableObject
     public string NameId;
 
 
+
     [Tooltip("Pool Amount")]
     public int PoolAmount;
 

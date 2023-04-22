@@ -80,6 +80,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeSpellTypeB"",
+                    ""type"": ""Button"",
+                    ""id"": ""55013e59-28ec-4ce4-8867-0d8c3f2b36b4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -322,6 +331,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""SouthB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb5eec6b-8072-4b45-995c-801f9add8799"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ChangeSpellTypeB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57af4f45-6bf1-4d49-a4a4-583a08924bd5"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ChangeSpellTypeB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -915,6 +946,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_PlayerControls_LeftB = m_PlayerControls.FindAction("LeftB", throwIfNotFound: true);
         m_PlayerControls_RightB = m_PlayerControls.FindAction("RightB", throwIfNotFound: true);
         m_PlayerControls_SouthB = m_PlayerControls.FindAction("SouthB", throwIfNotFound: true);
+        m_PlayerControls_ChangeSpellTypeB = m_PlayerControls.FindAction("ChangeSpellTypeB", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -994,6 +1026,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControls_LeftB;
     private readonly InputAction m_PlayerControls_RightB;
     private readonly InputAction m_PlayerControls_SouthB;
+    private readonly InputAction m_PlayerControls_ChangeSpellTypeB;
     public struct PlayerControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -1004,6 +1037,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @LeftB => m_Wrapper.m_PlayerControls_LeftB;
         public InputAction @RightB => m_Wrapper.m_PlayerControls_RightB;
         public InputAction @SouthB => m_Wrapper.m_PlayerControls_SouthB;
+        public InputAction @ChangeSpellTypeB => m_Wrapper.m_PlayerControls_ChangeSpellTypeB;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1031,6 +1065,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SouthB.started += instance.OnSouthB;
             @SouthB.performed += instance.OnSouthB;
             @SouthB.canceled += instance.OnSouthB;
+            @ChangeSpellTypeB.started += instance.OnChangeSpellTypeB;
+            @ChangeSpellTypeB.performed += instance.OnChangeSpellTypeB;
+            @ChangeSpellTypeB.canceled += instance.OnChangeSpellTypeB;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -1053,6 +1090,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @SouthB.started -= instance.OnSouthB;
             @SouthB.performed -= instance.OnSouthB;
             @SouthB.canceled -= instance.OnSouthB;
+            @ChangeSpellTypeB.started -= instance.OnChangeSpellTypeB;
+            @ChangeSpellTypeB.performed -= instance.OnChangeSpellTypeB;
+            @ChangeSpellTypeB.canceled -= instance.OnChangeSpellTypeB;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -1241,6 +1281,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnLeftB(InputAction.CallbackContext context);
         void OnRightB(InputAction.CallbackContext context);
         void OnSouthB(InputAction.CallbackContext context);
+        void OnChangeSpellTypeB(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -17,7 +17,7 @@ namespace MoreMountains.CorgiEngine
         public MMInput.IMButton RightButton { get; protected set; }
         public MMInput.IMButton SouthButton { get; protected set; }
 
-
+        public MMInput.IMButton ChangeSpellTypeButton { get; protected set; }
         public static InputManagerExt Instance { get; private set; }
         protected override void Awake()
         {
@@ -55,6 +55,8 @@ namespace MoreMountains.CorgiEngine
             ButtonList.Add(LeftButton = new MMInput.IMButton(PlayerID, "LeftB", LeftButtonDown, LeftButtonPressed, LeftButtonUp));
             ButtonList.Add(RightButton = new MMInput.IMButton(PlayerID, "RightB", RightButtonDown, RightButtonPressed, RightButtonUp));
             ButtonList.Add(SouthButton = new MMInput.IMButton(PlayerID, "SouthB", SouthButtonDown, SouthButtonPressed, SouthButtonUp));
+            ButtonList.Add(ChangeSpellTypeButton = new MMInput.IMButton(PlayerID, "ChangeSpellTypeB", ChangeSpellTypeButtonDown, ChangeSpellTypeButtonPressed, ChangeSpellTypeButtonUp));
+
 
             InputActions.PlayerControls.Movement.performed += context => _primaryMovement = context.ReadValue<Vector2>();
             InputActions.PlayerControls.Jump.performed += context => { BindButton(context, JumpButton); };
@@ -62,7 +64,7 @@ namespace MoreMountains.CorgiEngine
             InputActions.PlayerControls.LeftB.performed += context => { BindButton(context, LeftButton); };
             InputActions.PlayerControls.RightB.performed += context => { BindButton(context, RightButton); };
             InputActions.PlayerControls.SouthB.performed += context => { BindButton(context, SouthButton); };
-
+            InputActions.PlayerControls.ChangeSpellTypeB.performed += context => { BindButton(context, ChangeSpellTypeButton); };
 
 
 
@@ -190,6 +192,8 @@ namespace MoreMountains.CorgiEngine
         public virtual void SouthButtonPressed() { SouthButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
         public virtual void SouthButtonUp() { SouthButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
 
-
+        public virtual void ChangeSpellTypeButtonDown() { ChangeSpellTypeButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
+        public virtual void ChangeSpellTypeButtonPressed() { ChangeSpellTypeButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
+        public virtual void ChangeSpellTypeButtonUp() { ChangeSpellTypeButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
     }
 }
