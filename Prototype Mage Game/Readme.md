@@ -5,6 +5,7 @@
 ## changelog
 
 # 22/4/23 - rivenblades
+[+] hit animation
 [+] Crouch animation
 
 # 21/4/23 - alex
