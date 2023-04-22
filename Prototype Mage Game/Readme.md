@@ -4,6 +4,9 @@
 
 ## changelog
 
+# 22/4/23 - rivenblades
+[+] Crouch animation
+
 # 21/4/23 - alex
 [+] New Particles for spells (JMO assets)
 [+] Gamepad
