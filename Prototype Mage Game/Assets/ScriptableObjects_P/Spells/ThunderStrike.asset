@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca4de3698bf3b3b488148e36a1d61396, type: 3}
-  m_Name: FireWall
+  m_Name: ThunderStrike
   m_EditorClassIdentifier: 
-  CurrentType: {fileID: 11400000, guid: b86482aea08142d4eb7ab0d42e9cf203, type: 2}
-  NameId: Fire Wall
+  CurrentType: {fileID: 11400000, guid: 0aff4366d489f0e4c87d34a6ada43336, type: 2}
+  NameId: ThunderStrike
   PoolAmount: 4
   SpellsPrefabsLevels:
-  - {fileID: 3139446120588693195, guid: a9b77ba5f04d5554e9d3ef191c6bacab, type: 3}
+  - {fileID: 3139446120588693195, guid: 7ec881db4ecd14047833be1bf0015604, type: 3}
   ComboSpell:
   - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}
-  - {fileID: 11400000, guid: e8a3c6301b9abf14bbd70261c1faadcb, type: 2}
   - {fileID: 11400000, guid: fcf8cdcf960d3a54d88f5d5c3c837d54, type: 2}
+  - {fileID: 11400000, guid: ffc6edba9ff74c245ade34e34fef6924, type: 2}
+  - {fileID: 11400000, guid: f457878ebc1114948be25feaa5825975, type: 2}

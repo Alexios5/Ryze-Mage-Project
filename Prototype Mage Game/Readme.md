@@ -4,6 +4,13 @@
 
 ## changelog
 
+
+# 22/4/23 - alex
+[+] FireWall, EarthShield, ThunderStrike, LightBall Spells
+[+] Types of Spells
+[+] Container of Spells
+
+
 # 22/4/23 - rivenblades
 [+] Crouch animation
 
