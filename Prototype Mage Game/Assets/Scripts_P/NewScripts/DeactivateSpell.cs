@@ -17,7 +17,7 @@ public class DeactivateSpell : MonoBehaviour
     }
     IEnumerator DeactivateAfterSeconds()
     {
-        yield return new WaitForSeconds(SecondsToDeactivate);
+        yield return new WaitForSeconds(SecondsToDeactivate+1f);
         
         this.gameObject.SetActive(false);
     }
