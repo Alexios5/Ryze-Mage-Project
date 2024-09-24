@@ -21,11 +21,13 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMasterTextureLimit: 0
+    ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -88,7 +90,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
@@ -1295,7 +1296,6 @@ ScriptedImporter:
     - {x: 90, y: 91}
     - {x: 91, y: 92}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 591, y: 80}
   - name: Skirt
@@ -2009,7 +2009,6 @@ ScriptedImporter:
     - {x: 50, y: 51}
     - {x: 51, y: 52}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 414, y: 842}
     spritePosition: {x: 738, y: 708}
   - name: L_Leg_inside_
@@ -3053,7 +3052,6 @@ ScriptedImporter:
     - {x: 78, y: 79}
     - {x: 79, y: 80}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 836}
     spritePosition: {x: 602, y: 80}
   - name: R_Arm
@@ -4008,7 +4006,6 @@ ScriptedImporter:
     - {x: 74, y: 75}
     - {x: 75, y: 76}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 199, y: 842}
     spritePosition: {x: 464, y: 712}
   - name: FrontHair
@@ -4946,7 +4943,6 @@ ScriptedImporter:
     - {x: 75, y: 76}
     - {x: 76, y: 77}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 199, y: 1627}
     spritePosition: {x: 604, y: 1208}
   - name: Body copy 4
@@ -6204,7 +6200,6 @@ ScriptedImporter:
     - {x: 100, y: 101}
     - {x: 101, y: 102}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 199, y: 417}
     spritePosition: {x: 594, y: 845}
   - name: hairr
@@ -7459,7 +7454,6 @@ ScriptedImporter:
     - {x: 102, y: 103}
     - {x: 103, y: 104}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 199, y: 1336}
     spritePosition: {x: 607, y: 1216}
   - name: head_ copy
@@ -8579,7 +8573,6 @@ ScriptedImporter:
     - {x: 88, y: 89}
     - {x: 89, y: 90}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 1662}
     spritePosition: {x: 626, y: 1188}
   - name: L_Arm
@@ -9543,7 +9536,6 @@ ScriptedImporter:
     - {x: 75, y: 76}
     - {x: 76, y: 77}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 199, y: 4}
     spritePosition: {x: 693, y: 815}
   characterData:
@@ -9884,6 +9876,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -9891,10 +9884,12 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9906,6 +9901,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9917,6 +9913,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Server
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9936,6 +9933,10 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
   spriteCategoryList:
     categories: []
   spritePackingTag: 
@@ -10054,6 +10055,9 @@ ScriptedImporter:
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
   prefabAssetName: 
